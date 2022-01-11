@@ -1,3 +1,5 @@
 cluster_name = "obortech-staging"
 region = "ap-southeast-1"
 profile = "obortech"
+access_key = ""
+secret_key = ""

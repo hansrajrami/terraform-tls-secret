@@ -73,6 +73,8 @@ module "kconfig" {
     cluster_name = "obortech-staging"
     region = "${var.region}"
     profile = "${var.profile}"
+    access_key = "${var.access_key}"
+    secret_key = "${var.secret_key}"
 }
 
 resource "local_file" "kconfig_file" {
