@@ -68,20 +68,6 @@ resource "tls_locally_signed_cert" "server_cert" {
     set_subject_key_id = true
 }
 
-module "kconfig" {
-    source = "./modules/eks_kubeconfig"
-    cluster_name = "obortech-staging"
-    region = "${var.region}"
-    profile = "${var.profile}"
-    access_key = "${var.access_key}"
-    secret_key = "${var.secret_key}"
-}
-
-resource "local_file" "kconfig_file" {
-    filename = "eks_k8config"
-    content = "./kubeconfig-${var.cluster_name}"
-}
-
 resource "kubernetes_namespace" "tls_cert_test" {
   metadata {
     name = "tlscerttest"

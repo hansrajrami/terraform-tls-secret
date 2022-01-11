@@ -15,7 +15,3 @@ output "server_priv_key_pem" {
 output "server_cert_pem" {
     value = "${tls_locally_signed_cert.server_cert.cert_pem}"
 }
-
-output "k8config" {
-    value = "${module.kconfig.kubeconfig}"
-}
